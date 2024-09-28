@@ -9,8 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#1d1d1d",
+        tik: "#69c9do0",
+        tok: "#ee1d52",
       },
     },
   },
