@@ -104,7 +104,7 @@ const WorksDraggable = ({ works }: Props) => {
         <div
           className={`flex items-center justify-center h-[100%] ${styles.more}`}
         >
-          <div className="text-xl mx-32 ">
+          <div className="text-xl">
             Explore more about this and other of my projects
           </div>
         </div>
