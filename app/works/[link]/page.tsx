@@ -22,7 +22,7 @@ export default function WorkDetailPage({
   console.log(work.subImg.src);
 
   return (
-    <main className="text-[#dddddd] bg-primary text-sm pb-20 px-8 tracking-widest leading-relaxed">
+    <main className="text-[#dddddd] bg-primary text-sm pb-[150px] px-8 tracking-widest leading-relaxed">
       <div className="w-full h-[600px] flex justify-center items-center ">
         {" "}
         <h2 className="text-6xl lg:text-9xl font-bold w-[80%] text-center">
@@ -70,7 +70,7 @@ export default function WorkDetailPage({
         </div>
       </div>
 
-      <div className="py-5 pt-10 lg:grid lg:grid-cols-2">
+      <div className="py-5 pt-20 pb-10 lg:grid lg:grid-cols-2">
         <div
           className={`${styles.fadeAnimation} w-full  relative flex items-center`}
         >

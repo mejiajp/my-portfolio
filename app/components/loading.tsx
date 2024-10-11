@@ -1,72 +1,93 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import styles from "./loading.module.css";
 
 const SplashScreenClient = () => {
-  const countdown = ["Setting up...", "Three", "Two", "Juan"];
+  const countdown = ["Three", "Two", "Juan"];
   const [loading, setLoading] = useState(true);
-  const [phrase, setPhrase] = useState("Setting up..."); // Set initial phrase
-  const [animate, setAnimate] = useState(false); // Track when to start exit animation
+  const [phrase, setPhrase] = useState("Setting up...");
+  const [animate, setAnimate] = useState(false);
+
   const breakpoints = {
     sm: 640,
     md: 768,
     lg: 1024,
   };
-  const [currentBreakpoint, setCurrentBreakpoint] = useState("sm"); // Set default breakpoint
 
-  // Get the current screen breakpoint
-  function getBreakpoint(width: number) {
-    if (width < breakpoints.sm) return "sm";
-    else if (width >= breakpoints.sm && width < breakpoints.md) return "md";
-    else if (width >= breakpoints.md && width < breakpoints.lg) return "lg";
-    else return "xl"; // Extra large
-  }
+  const [currentBreakpoint, setCurrentBreakpoint] = useState("sm");
 
-  // Initialize current breakpoint on the client side
+  // Ref to store the previous breakpoint for comparison
+  const prevBreakpointRef = useRef<string | null>(null);
+
   useEffect(() => {
     const handleResize = () => {
-      const newWidth = window.innerWidth;
-      const newBreakpoint = getBreakpoint(newWidth);
-      setCurrentBreakpoint(newBreakpoint);
+      const width = window.innerWidth;
+      let newBreakpoint: string;
+
+      if (width >= breakpoints.lg) {
+        newBreakpoint = "lg";
+      } else if (width >= breakpoints.md) {
+        newBreakpoint = "md";
+      } else if (width >= breakpoints.sm) {
+        newBreakpoint = "sm";
+      } else {
+        newBreakpoint = "xs";
+      }
+
+      const prevBreakpoint = prevBreakpointRef.current;
+
+      // Only update if the new breakpoint is different from the previous one
+      if (newBreakpoint !== prevBreakpoint) {
+        setLoading(true);
+        setCurrentBreakpoint(newBreakpoint);
+        prevBreakpointRef.current = newBreakpoint; // Update ref with the new breakpoint
+        console.log("new: ", newBreakpoint);
+        console.log("prev: ", prevBreakpoint);
+      }
     };
 
-    // Set the initial breakpoint
-    handleResize(); // Set current breakpoint on initial load
+    // Listen for resize events
     window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+    // Check breakpoint on initial render
+    handleResize();
 
-  // Handle the countdown logic
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Only runs once on mount/unmount
+
   useEffect(() => {
-    if (!loading) return; // Skip countdown if not loading
-
-    const length = countdown.length;
+    // Start countdown only if the breakpoint has actually changed
     let count = 0;
 
-    const countdownProcess = setInterval(() => {
+    const beginCountdown = setInterval(() => {
       setPhrase(countdown[count]);
       count++;
 
-      if (count === length) {
-        clearInterval(countdownProcess);
+      if (count === countdown.length) {
+        clearInterval(beginCountdown);
+
+        // Delay before setting animate to true
         setTimeout(() => {
-          setAnimate(true); // Trigger exit animation
-          setTimeout(() => setLoading(false), 800); // Wait for animation to complete before hiding splash
-        }, 200); // Short delay before starting exit animation
+          setAnimate(true);
+
+          setTimeout(() => {
+            setLoading(false);
+            setPhrase("Setting up...");
+            setAnimate(false);
+          }, 800); // Delay before setting loading to false and updating phrase
+        }, 500); // Delay before starting the final animation
       }
     }, 500);
 
-    return () => clearInterval(countdownProcess); // Cleanup interval
+    return () => clearInterval(beginCountdown); // Cleanup interval on effect re-run
   }, [currentBreakpoint]);
 
   return loading ? (
     <div
       className={`text-lg lg:text-xl ${styles.load} ${
-        animate ? `${styles.aniUp}` : ""
+        animate ? `${styles.aniUp}` : ``
       }`}
     >
       <h1>{phrase}</h1>

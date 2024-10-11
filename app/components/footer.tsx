@@ -24,8 +24,9 @@ const Footer = () => {
           <Linkedin className="text-[hsl(0,0%,90%)] cursor-pointer group-hover:text-tak w-[60%]" />
         </div>
         <Link
-          href="/Resume.pdf" // Directly referencing the public path
+          href="./Resumé.pdf" // Directly referencing the public path
           target="_blank"
+          download
           rel="noopener noreferrer"
           className="h-11 aspect-square rounded-full custom-outline outline-[#696969] flex items-center justify-center hover:text-tak hover:outline-tak group"
         >

@@ -101,8 +101,10 @@ const WorksDraggable = ({ works }: Props) => {
         href="/works"
         className="w-[80%] lg:w-[50%] aspect-[4/3] mr-5 bg-[#141414] shrink-0 relative overflow-hidden"
       >
-        <div className={`flex items-center h-[100%] ${styles.more}`}>
-          <div className="text-xl text-center mx-32">
+        <div
+          className={`flex items-center justify-center h-[100%] ${styles.more}`}
+        >
+          <div className="text-xl mx-32 ">
             Explore more about this and other of my projects
           </div>
         </div>

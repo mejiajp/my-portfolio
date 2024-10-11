@@ -19,7 +19,7 @@
 }
 
 .getToKnow:hover .arrow {
-  transform: translateX(10px) scaleX(2.5); /* Combine translateX with the initial scale */
+  transform: translateX(20px) scaleX(2.5); /* Combine translateX with the initial scale */
   color: theme("colors.tak");
 }
 
