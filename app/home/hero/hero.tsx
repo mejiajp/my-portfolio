@@ -9,7 +9,7 @@ import Link from "next/link";
 const Hero = () => {
   return (
     <section
-      className={`${styles.container} mt-[150px] p-10 items-center lg:grid grid-cols-2 lg:mx-20 lg:gap-[5%] lg:p-0 `}
+      className={`${styles.container} mt-[100px] lg:mt-[150px] p-10 items-center lg:grid grid-cols-2 lg:mx-20 lg:gap-[5%] lg:p-0 `}
     >
       <div
         className={`${styles.imageContainer} relative w-full h-full  overflow-hidden flex items-center`}
@@ -30,7 +30,7 @@ const Hero = () => {
       <div
         className={`${styles.introduction} flex flex-col lg:justify-between  lg:h-[80%] my-12 lg:my-0 `}
       >
-        <div className="text-3xl lg:text-4xl font-medium tracking-wider leading-loose mt-8  lg:mt-0 h-[150px] md:h-[120px] lg:h-[20%]">
+        <div className="text-3xl lg:text-4xl font-medium tracking-wider leading-loose mt-8  lg:mt-0 h-[200px] md:h-[120px] lg:h-[20%]">
           <p>
             {" "}
             Juan is an aspiring <AutoType />

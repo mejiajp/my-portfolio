@@ -72,7 +72,7 @@ const SplashScreenClient = () => {
           }, 800);
         }, 500);
       }
-    }, 500);
+    }, 400);
 
     return () => clearInterval(beginCountdown); // Cleanup interval on effect re-run
   }, [currentBreakpoint]);

@@ -73,7 +73,7 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className={`fixed inset-0 bg-primary text-[#696969] flex flex-col  md:flex-row z-30 pl-5 ${
+      className={`fixed inset-0 bg-primary h-screen overflow-hidden  text-[#696969] flex flex-col  md:flex-row z-30 pl-5 ${
         isOpen ? "slide-down" : "slide-up"
       }`}
     >
