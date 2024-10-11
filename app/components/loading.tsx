@@ -17,7 +17,6 @@ const SplashScreenClient = () => {
 
   const [currentBreakpoint, setCurrentBreakpoint] = useState("sm");
 
-  // Ref to store the previous breakpoint for comparison
   const prevBreakpointRef = useRef<string | null>(null);
 
   useEffect(() => {
@@ -42,20 +41,15 @@ const SplashScreenClient = () => {
         setLoading(true);
         setCurrentBreakpoint(newBreakpoint);
         prevBreakpointRef.current = newBreakpoint; // Update ref with the new breakpoint
-        console.log("new: ", newBreakpoint);
-        console.log("prev: ", prevBreakpoint);
       }
     };
 
-    // Listen for resize events
     window.addEventListener("resize", handleResize);
 
-    // Check breakpoint on initial render
     handleResize();
 
-    // Cleanup event listener on component unmount
     return () => window.removeEventListener("resize", handleResize);
-  }, []); // Only runs once on mount/unmount
+  }, []);
 
   useEffect(() => {
     // Start countdown only if the breakpoint has actually changed
@@ -68,7 +62,6 @@ const SplashScreenClient = () => {
       if (count === countdown.length) {
         clearInterval(beginCountdown);
 
-        // Delay before setting animate to true
         setTimeout(() => {
           setAnimate(true);
 
@@ -76,8 +69,8 @@ const SplashScreenClient = () => {
             setLoading(false);
             setPhrase("Setting up...");
             setAnimate(false);
-          }, 800); // Delay before setting loading to false and updating phrase
-        }, 500); // Delay before starting the final animation
+          }, 800);
+        }, 500);
       }
     }, 500);
 

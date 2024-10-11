@@ -10,6 +10,11 @@ import Footer from "@/app/components/footer";
 export const metadata: Metadata = {
   title: "Juan Mejia",
   description: "Portfolio created by Juan Paulo Mejia",
+  icons: {
+    icon: ["./favicon.ico?v=4"],
+    apple: ["./apple-touch-icon.png?v=4"],
+    shortcut: ["./apple-touch-icon.png"],
+  },
 };
 
 export default function RootLayout({
