@@ -19,6 +19,13 @@ const Resume = () => {
       with cross-functional teams to enhance productivity 
       and streamline functionalities.`,
     },
+    {
+      company: "HACKTIV",
+      role: "Web Programmer",
+      description: `Worked in a small team to pioneer the creation of an ESL (English for Second Language) tutor booking platform for helping 
+Japanese students learn English with subscription-based model`,
+    },
+    
   ];
 
   const techContent = {
