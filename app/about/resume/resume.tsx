@@ -20,10 +20,12 @@ const Resume = () => {
       and streamline functionalities.`,
     },
     {
-      company: "HACKTIV",
+      company: "JLRC",
       role: "Web Programmer",
-      description: `Worked in a small team to pioneer the creation of an ESL (English for Second Language) tutor booking platform for helping 
-Japanese students learn English with subscription-based model`,
+      description: `Worked in a small team to pioneer the creation of
+      an ESL (English for Second Language) tutor booking platform for 
+      helping Japanese students learn English with subscription-based 
+      model`,
     },
     
   ];
