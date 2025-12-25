@@ -1,10 +1,7 @@
-// app/layout.js
 import type { Metadata } from "next";
 import "./globals.css";
-import Link from "next/link";
 
 import SplashScreen from "@/app/components/loading";
-import Sidebar from "@/app/components/sidebar";
 import Footer from "@/app/components/footer";
 import Header from "./components/header";
 

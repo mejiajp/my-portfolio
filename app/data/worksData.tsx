@@ -15,12 +15,12 @@ import w3in from "@/public/img/works/crocIn.png";
 import w4main from "@/public/img/works/hackIcon.png";
 import w4sub from "@/public/img/works/hack1.png";
 import w4in from "@/public/img/works/hackIn.png";
-import w5main from "@/public/img/works/inveIcon.png";
-import w5sub from "@/public/img/works/inve1.png";
-import w5in from "@/public/img/works/inveIn.png";
-import w6main from "@/public/img/works/tranIcon.png";
-import w6sub from "@/public/img/works/tran1.png";
-import w6in from "@/public/img/works/tranIn.png";
+// import w5main from "@/public/img/works/inveIcon.png";
+// import w5sub from "@/public/img/works/inve1.png";
+// import w5in from "@/public/img/works/inveIn.png";
+// import w6main from "@/public/img/works/tranIcon.png";
+// import w6sub from "@/public/img/works/tran1.png";
+// import w6in from "@/public/img/works/tranIn.png";
 
 // Create an array of works
 export const works: Work[] = [
