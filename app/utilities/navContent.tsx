@@ -1,6 +1,7 @@
 import "@/app/styles/navigation.css";
 import Linkedin from "@/public/svg/linkedin-02-stroke-rounded";
 import Facebook from "@/public/svg/facebook-02-stroke-rounded";
+import Github from "@/public/svg/github-stroke-rounded";
 // import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -102,6 +103,14 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
                   className="text-white cursor-pointer group-hover:text-tak"
                   onClick={() =>
                     handleSocialClick("https://www.facebook.com/s0mejuan")
+                  }
+                />
+              </div>
+              <div className="w-10 h-10 fill-white custom-outline text-white flex justify-center items-center rounded-full hover:bg-[#ffffff0f] hover:outline-tak group">
+                <Github
+                  className="text-white cursor-pointer group-hover:text-tak"
+                  onClick={() =>
+                    handleSocialClick("https://github.com/mejia-1MT")
                   }
                 />
               </div>

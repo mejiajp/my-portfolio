@@ -29,7 +29,7 @@ import w4in from "@/public/img/works/hackIn.png";
 export const works: Work[] = [
   {
     id: 0,
-    img: wr1main, // Directly assign the imported image
+    img: wr1main,
     subImg: wr1sub,
     inImg: wr1in,
     title: "GeoGauntlet",
