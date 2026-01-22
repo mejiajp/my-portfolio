@@ -7,15 +7,15 @@
 }
 
 .arrow {
-  transform: scaleX(2.5); /* Adjust the scaling factor as needed */
+  transform: scaleX(2.5);
   margin-left: 20px;
   color: theme("colors.tak");
   transition: transform 1.5s cubic-bezier(0, 0.55, 0.45, 1);
 }
 
 .cursor {
-  display: inline-block; /* Ensures the cursor behaves like text */
-  margin-left: 2px; /* Space between text and cursor */
+  display: inline-block;
+  margin-left: 2px;
 }
 
 .getToKnow:hover .arrow {

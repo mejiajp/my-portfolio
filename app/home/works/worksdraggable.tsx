@@ -74,7 +74,8 @@ const WorksDraggable = ({ works }: Props) => {
           } w-[80%] lg:w-[50%] mr-5 shrink-0 relative ${
             dragging ? "cursor-grabbing" : "cursor-grab"
           } `} // Main div
-          onClick={handleClick} // Attach click handler
+          onClick={handleClick}
+          data-cursor="Drag"
         >
           <div className={`w-full aspect-[4/3] relative overflow-hidden`}>
             <div
@@ -100,6 +101,7 @@ const WorksDraggable = ({ works }: Props) => {
       <Link
         href="/works"
         className="w-[80%] lg:w-[50%] aspect-[4/3] mr-5 bg-[#141414] shrink-0 relative overflow-hidden"
+        data-cursor="Open"
       >
         <div
           className={`flex items-center justify-center h-[100%] ${styles.more}`}

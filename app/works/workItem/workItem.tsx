@@ -11,7 +11,10 @@ interface WorkItemProps {
 const WorkItem: React.FC<WorkItemProps> = ({ work, index }) => {
   return (
     <section className={`w-screen bg-blue-500 ${index % 2 === 0 ? "" : ""}`}>
-      <div className={` max-w-[450px] min-w-[280px] pb-10 relative`}>
+      <div
+        className={` max-w-[450px] min-w-[280px] pb-10 relative`}
+        data-cursor="View"
+      >
         <Image
           src={work.inImg.src}
           alt={work.title}

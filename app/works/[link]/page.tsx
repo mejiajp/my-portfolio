@@ -48,12 +48,9 @@ export default function WorkDetailPage({
         <div>
           <h3 className="text-white font-semibold">LINK</h3>
           <div
-            className={
-              work.live
-                ? "cursor-pointer text-blue-500 underline"
-                : "text-gray-400"
-            }
+            className={work.live ? "cursor-pointer text-tak " : "text-gray-400"}
             onClick={() => work.live && window.open(work.live, "_blank")}
+            data-cursor={work.live ? "Open" : ""}
           >
             {work.live ?? "PRIVATE LINK NOT PROVIDED"}
           </div>

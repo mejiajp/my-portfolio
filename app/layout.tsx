@@ -3,7 +3,8 @@ import "./globals.css";
 
 import SplashScreen from "@/app/components/loading";
 import Footer from "@/app/components/footer";
-import Header from "./components/header";
+import Header from "@/app/components/header";
+import Cursor from "@/app/components/cursor";
 
 export const metadata: Metadata = {
   title: "Juan Mejia",
@@ -35,8 +36,9 @@ export default function RootLayout({
         ></link>
       </head>
       <body className={`antialiased`}>
+        <div id="cursor-root" />
+        <Cursor />
         <SplashScreen />
-
         <Header />
 
         {children}

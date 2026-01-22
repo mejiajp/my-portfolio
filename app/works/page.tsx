@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Work } from "@/app/types/workTypes";
 import { works } from "@/app/data/worksData";
-import Arrow from "@/public/svg/arrow-right-02-stroke-rounded";
+// import Arrow from "@/public/svg/arrow-right-02-stroke-rounded";
 import styles from "./workItem/workList.module.css";
 
 const WorksPage = () => {
@@ -15,17 +15,18 @@ const WorksPage = () => {
       </div>
       <div className={styles.projectsContainer}>
         {works.map((work: Work, index) => (
-          <Link
-            href={`works/${work.link}`}
+          <div
             className={`w-full mb-16 flex ${
               index % 2 === 0 ? "sm:justify-end sm:pr-[20%]" : " sm:pl-[20%]"
             } `}
             key={index}
           >
             {" "}
-            <div
+            <Link
               className={`${styles.project}   `}
               style={{ "--index": index } as React.CSSProperties}
+              href={`works/${work.link}`}
+              data-cursor="View"
             >
               <div className="w-full overflow-hidden">
                 {" "}
@@ -43,16 +44,16 @@ const WorksPage = () => {
                 <div className={styles.endDate}>
                   <p className={styles.endDateContent}>{work.end}</p>
                 </div>
-                <div className={styles.arrowContainer}>
+                {/* <div className={styles.arrowContainer}>
                   <Arrow className="w-[60%]" />
-                </div>
+                </div> */}
               </div>
               <div className="p-5 text-xl  md:p-10 tracking-none ">
                 <h4 className={`${styles.projectType} `}>{work.projectType}</h4>
                 <h3 className={styles.projectTitle}>{work.title}</h3>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </div>
         ))}
       </div>
     </main>
