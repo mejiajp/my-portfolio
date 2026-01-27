@@ -41,7 +41,7 @@ const Slideshow = () => {
         <p>Paw-rent</p>
         <p>DOOM Scroller</p>
       </div>
-      <div className={`${styles.slider} hidden lg:block z-10`}>
+      <div className={`${styles.slider} hidden lg:block cursor-pointer z-10`}>
         <ul>
           <li className={`left-0`}>-ABOUT-</li>
           <li className={`left-[100%]`}>-ABOUT-</li>

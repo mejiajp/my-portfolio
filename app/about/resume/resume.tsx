@@ -27,7 +27,6 @@ const Resume = () => {
       helping Japanese students learn English with subscription-based 
       model`,
     },
-    
   ];
 
   const techContent = {
@@ -82,9 +81,7 @@ const Resume = () => {
             {experienceContent.map((cont, index) => (
               <div
                 key={index}
-                className={`lg:mr-10 ${
-                  index == 0 ? "" : "pt-5"
-                }`}
+                className={`lg:mr-10 ${index == 0 ? "" : "pt-5"}`}
               >
                 <p className={styles.title}>{cont.company}</p>
                 <p className={styles.sub}>{cont.role}</p>
@@ -110,7 +107,7 @@ const Resume = () => {
           </div>
           <ul className={`${styles.bullet} col-start-2`}>
             {techContent.skills.map((tech, index) => (
-              <li key={index} className={styles.content}>
+              <li key={index} className={`${styles.content} my-5`}>
                 {tech}
               </li>
             ))}
@@ -124,7 +121,7 @@ const Resume = () => {
           </div>
           <ul className={`${styles.bullet} col-start-2`}>
             {keyContent.skills.map((key, index) => (
-              <li key={index} className={styles.content}>
+              <li key={index} className={`${styles.content} my-5`}>
                 {key}
               </li>
             ))}
