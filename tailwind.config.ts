@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#1d1d1d",
+        primary_dark: "#141414",
         tik: "#FE2C55",
         tok: "#25F4EE",
         tak: "#F1AFDD",
@@ -23,7 +24,6 @@ const config: Config = {
         ".custom-outline": {
           "@apply outline outline-1 outline-offset-0": {},
         },
-        // Navigation
       };
 
       addUtilities(newUtilities);

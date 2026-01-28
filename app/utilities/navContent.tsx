@@ -33,7 +33,7 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
     //     isOpen === true ? " open" : ""
     //   }`}
     <div
-      className={`fixed inset-0 nav-content bg-primary h-screen overflow-hidden text-white flex flex-col  justify-between z-30 px-10  ${
+      className={`fixed inset-0 nav-content bg-primary_dark h-screen overflow-hidden text-white flex flex-col  justify-between z-30 px-10  ${
         isOpen === true ? " open" : ""
       }`}
     >
@@ -46,7 +46,7 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
       </div>
 
       {/* Links */}
-      <div className="">
+      <div className="space-y-2">
         <GoUp mounted={isOpen}>
           <Link
             href="/"
@@ -54,8 +54,8 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
             onClick={onClose}
           >
             <p className="text-xl">01</p>
-            <div className="shadow-before-hover font- ml-5 " data-text="Home">
-              Home
+            <div className="shadow-before-hover font- ml-5 " data-text="HOME">
+              HOME
             </div>
           </Link>
         </GoUp>
@@ -66,8 +66,8 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
             onClick={onClose}
           >
             <p className="text-xl">02</p>
-            <div className="shadow-before-hover ml-5 " data-text="Works">
-              Works
+            <div className="shadow-before-hover ml-5 " data-text="WORKS">
+              WORKS
             </div>
           </Link>
         </GoUp>
@@ -78,8 +78,8 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
             onClick={onClose}
           >
             <p className="text-xl">03</p>
-            <div className="shadow-before-hover ml-5 " data-text="About">
-              About
+            <div className="shadow-before-hover ml-5 " data-text="ABOUT">
+              ABOUT
             </div>
           </Link>
         </GoUp>
