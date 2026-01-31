@@ -7,6 +7,14 @@ import { works } from "@/app/data/worksData";
 import styles from "./workItem/workList.module.css";
 
 const WorksPage = () => {
+  const thisFunction = (string: string) => {
+    const array = string.split("");
+    console.log(array);
+    return null;
+  };
+
+  thisFunction("1111010");
+
   return (
     <section className={`${styles.main} bg-primary pb-20 pt-20 z-20`}>
       <div className={styles.titleContainer}>

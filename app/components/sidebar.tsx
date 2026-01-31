@@ -25,7 +25,7 @@ const Sidebar = () => {
   // }, []); // Closes on esc
 
   return (
-    <aside className=" ">
+    <aside className="">
       <NavButton onClick={handleClick} isOpen={isOpen} />
       <NavContent isOpen={isOpen} onClose={handleClose} />
     </aside>
