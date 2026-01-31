@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  turbopack: {}, // Add this empty config to silence the warning
   webpack(config) {
     // Existing SVG loader
     config.module.rules.push({

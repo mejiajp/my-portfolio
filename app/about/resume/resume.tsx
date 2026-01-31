@@ -89,7 +89,7 @@ const Resume = () => {
                 <div
                   className={`${
                     index < experienceContent.length - 1
-                      ? "w-full bg-primary h-[1px] mt-5"
+                      ? "w-full bg-primary h-px mt-5"
                       : "hidden"
                   }`}
                 ></div>

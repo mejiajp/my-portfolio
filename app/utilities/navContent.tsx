@@ -50,7 +50,7 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
         <GoUp mounted={isOpen}>
           <Link
             href="/"
-            className={`group overflow-hidden flex w-fit   lg:h-[6rem]  `}
+            className={`group overflow-hidden flex w-fit   lg:h-24  `}
             onClick={onClose}
           >
             <p className="text-xl">01</p>
@@ -62,7 +62,7 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
         <GoUp mounted={isOpen}>
           <Link
             href="/works"
-            className={`group overflow-hidden flex w-fit  lg:h-[6rem]  `}
+            className={`group overflow-hidden flex w-fit  lg:h-24  `}
             onClick={onClose}
           >
             <p className="text-xl">02</p>
@@ -74,7 +74,7 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
         <GoUp mounted={isOpen}>
           <Link
             href="/about"
-            className={` group overflow-hidden flex w-fit    lg:h-[6rem]  `}
+            className={` group overflow-hidden flex w-fit    lg:h-24  `}
             onClick={onClose}
           >
             <p className="text-xl">03</p>
@@ -103,8 +103,8 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
           <GoUp mounted={isOpen}>
             <div className="">
               <p> More about me in socials </p>
-              <div className="flex space-x-4 m-[1px]">
-                <div className="w-10 h-10 fill-white custom-outline text-white flex justify-center items-center rounded-full hover:bg-[#ffffff0f] hover:outline-tak group">
+              <div className="flex space-x-4 m-px">
+                <div className="w-(--small-circle) aspect-square fill-white border  text-white flex justify-center items-center rounded-full hover:bg-[#ffffff0f] hover:border-tak group">
                   <Linkedin
                     className="text-white cursor-pointer group-hover:text-tak"
                     onClick={() =>
@@ -114,7 +114,7 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
                     }
                   />
                 </div>
-                <div className="w-10 h-10 fill-white custom-outline text-white flex justify-center items-center rounded-full hover:bg-[#ffffff0f] hover:outline-tak group">
+                <div className="w-(--small-circle) aspect-square  fill-white border  text-white flex justify-center items-center rounded-full hover:bg-[#ffffff0f] hover:border-tak group">
                   <Facebook
                     className="text-white cursor-pointer group-hover:text-tak"
                     onClick={() =>
@@ -122,7 +122,7 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
                     }
                   />
                 </div>
-                <div className="w-10 h-10 fill-white custom-outline text-white flex justify-center items-center rounded-full hover:bg-[#ffffff0f] hover:outline-tak group">
+                <div className=" w-(--small-circle) aspect-square  fill-white border  text-white flex justify-center items-center rounded-full hover:bg-[#ffffff0f] hover:border-tak group">
                   <Github
                     className="text-white cursor-pointer group-hover:text-tak"
                     onClick={() =>

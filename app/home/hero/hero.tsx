@@ -18,7 +18,7 @@ const Hero = () => {
           className="object-cover"
           src={Profile}
           alt="Profile"
-          quality={100}
+          quality={75}
           priority
         />
 
@@ -44,10 +44,10 @@ const Hero = () => {
         </p>
         <Link
           href="/about"
-          className={` ${styles.getToKnow} mt-10 lg:mt-0 relative `}
+          className={` ${styles.getToKnow} mt-10 lg:mt-0 relative group `}
         >
           <p className="cursor-pointer">Get to know me more</p>
-          <Arrow className={`${styles.arrow}`} />
+          <Arrow className="ml-5 text-tak transition-transform duration-800 group-hover:translate-x-5 scale-x-[2.5]" />
         </Link>
       </div>
     </section>

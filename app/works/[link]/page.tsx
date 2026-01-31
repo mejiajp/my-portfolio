@@ -1,6 +1,7 @@
 "use client";
 
 // app/works/[id]/page.tsx
+import React from "react";
 import styles from "./link.module.css";
 import { works } from "@/app/data/worksData"; // Import your works data
 import { Work } from "@/app/types/workTypes"; // Import your Work type
@@ -9,9 +10,10 @@ import Image from "next/image";
 export default function WorkDetailPage({
   params,
 }: {
-  params: { link: string };
+  params: Promise<{ link: string }>;
 }) {
-  const { link } = params;
+  const resolvedParams = React.use(params); // unwrap the promise
+  const link = resolvedParams.link;
 
   // Find the work by link instead of id
   const work: Work | undefined = works.find((work) => work.link === link);
@@ -44,7 +46,7 @@ export default function WorkDetailPage({
         />
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 w-full font-medium gap-3 py-5  md:border-b-[1px] border-[#dddddd]">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 w-full font-medium gap-3 py-5  md:border-b border-[#dddddd]">
         <div>
           <h3 className="text-white font-semibold">LINK</h3>
           <div

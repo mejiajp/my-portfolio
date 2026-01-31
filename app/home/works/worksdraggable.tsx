@@ -1,4 +1,4 @@
-"use client"; // Mark this component as a client component
+"use client";
 import React, { useRef, useState } from "react";
 import styles from "./worksdraggable.module.css";
 import { Work } from "@/app/types/workTypes";
@@ -10,79 +10,83 @@ interface Props {
 }
 
 const WorksDraggable = ({ works }: Props) => {
-  const scrollRef = useRef<HTMLDivElement | null>(null);
-  const isDragging = useRef<boolean>(false);
-  const startX = useRef<number>(0);
-  const scrollLeft = useRef<number>(0);
-  const [dragging, setDragging] = useState<boolean>(false); // State to track dragging
-  const [dragged, setDragged] = useState<boolean>(false); // State to track if a drag occurred
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const dragState = useRef({
+    isDragging: false,
+    startX: 0,
+    scrollLeft: 0,
+    hasMoved: false,
+  });
+  const [isDragging, setIsDragging] = useState(false);
 
-  const handleMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
-    event.preventDefault();
-    if (scrollRef.current) {
-      isDragging.current = true;
-      startX.current = event.pageX - scrollRef.current.offsetLeft; // Record the initial click position relative to the container
-      scrollLeft.current = scrollRef.current.scrollLeft; // Get the current scroll position
-      setDragging(true); // Set dragging to true
-      setDragged(false); // Reset dragged state
-    }
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!scrollRef.current) return;
+
+    e.preventDefault();
+    dragState.current = {
+      isDragging: true,
+      startX: e.pageX - scrollRef.current.offsetLeft,
+      scrollLeft: scrollRef.current.scrollLeft,
+      hasMoved: false,
+    };
+    setIsDragging(true);
   };
 
-  const handleMouseLeave = () => {
-    isDragging.current = false; // Reset dragging state
-    setDragging(false); // Set dragging to false
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!dragState.current.isDragging || !scrollRef.current) return;
+
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = x - dragState.current.startX;
+
+    scrollRef.current.scrollLeft = dragState.current.scrollLeft - walk;
+
+    // Mark as moved if dragged more than 5px
+    if (Math.abs(walk) > 5) {
+      dragState.current.hasMoved = true;
+    }
   };
 
   const handleMouseUp = () => {
-    isDragging.current = false; // Reset dragging state
-    setDragging(false); // Set dragging to false
+    // Reset after a small delay to allow click event to read the state
+    setTimeout(() => {
+      dragState.current.isDragging = false;
+      dragState.current.hasMoved = false;
+    }, 0);
+    setIsDragging(false);
   };
 
-  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (isDragging.current && scrollRef.current) {
-      event.preventDefault(); // Prevent default dragging behavior
-      const x = event.pageX - scrollRef.current.offsetLeft; // Calculate the current mouse position
-      const walk = x - startX.current; // Calculate how far the mouse has moved
-      scrollRef.current.scrollLeft = scrollLeft.current - walk; // Update the scroll position directly
-      setDragged(true); // Set dragged state to true
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (dragState.current.hasMoved) {
+      e.preventDefault();
     }
   };
 
-  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    if (dragged) {
-      event.preventDefault(); // Prevent click event if dragging occurred
-    }
-  };
+  const cursorClass = isDragging ? styles.grabbing : styles.grab;
 
   return (
     <div
-      className={`${styles.container} ${
-        dragging ? styles.grabbing : styles.grab
-      } px-5 lg:px-20  pb-[250px] lg:pb-[300px] `} // Add dragging class for preview effect
+      className={`${styles.container} ${cursorClass} px-5 lg:px-20 pb-[250px] lg:pb-[300px]`}
       ref={scrollRef}
       onMouseDown={handleMouseDown}
-      onMouseLeave={handleMouseLeave}
-      onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp}
     >
-      {works.slice(0, 3).map((work, index) => (
+      {works.slice(0, 3).map((work) => (
         <Link
-          href={`works/${work.link}`}
-          key={index}
-          className={`${
-            styles.content
-          } w-[80%] lg:w-[50%] mr-5 shrink-0 relative ${
-            dragging ? "cursor-grabbing" : "cursor-grab"
-          } `} // Main div
-          onClick={handleClick}
+          href={`/works/${work.link}`}
+          key={work.link}
+          className={`${styles.content} w-[80%] lg:w-[50%] mr-5 shrink-0 relative ${cursorClass}`}
+          onClick={handleLinkClick}
           data-cursor="Drag"
         >
-          <div className={`w-full aspect-[4/3] relative overflow-hidden`}>
+          <div className="w-full aspect-4/3 relative overflow-hidden">
             <div
               className={`${styles.image} w-full h-full bg-cover bg-center transition-transform duration-300`}
               style={{ backgroundImage: `url(${work.img.src})` }}
             />
-            <div className="absolute bottom-0 w-full h-[30%] bg-gradient-to-t from-primary to-transparent"></div>
+            <div className="absolute bottom-0 w-full h-[30%] bg-gradient-to-t from-primary to-transparent" />
           </div>
           <div
             className={`h-[25%] w-full z-10 bg-primary p-2 text-white ${styles.textContainer}`}
@@ -100,11 +104,12 @@ const WorksDraggable = ({ works }: Props) => {
       ))}
       <Link
         href="/works"
-        className="w-[80%] lg:w-[50%] aspect-[4/3] mr-5 bg-[#141414] shrink-0 relative overflow-hidden"
+        className="w-[80%] lg:w-[50%] aspect-4/3 mr-5 bg-primary_dark shrink-0 relative overflow-hidden"
         data-cursor="Open"
+        onClick={handleLinkClick}
       >
         <div
-          className={`flex items-center justify-center h-[100%] ${styles.more}`}
+          className={`flex items-center justify-center h-full ${styles.more}`}
         >
           <div className="text-xl">
             Explore more about this and other of my projects

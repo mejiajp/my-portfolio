@@ -24,7 +24,7 @@
 .arrow {
   transform: scaleX(2.5) scaleY(1.5);
   margin-left: 35px;
-  color: theme("colors.tak");
+  color: var(--color-tak);
   transition: transform 2s cubic-bezier(0, 0.55, 0.45, 1);
 }
 
@@ -47,5 +47,5 @@
 
 .more:hover {
   transform: scale(1.05);
-  color: theme("colors.tak");
+  color: var(--color-tak);
 }

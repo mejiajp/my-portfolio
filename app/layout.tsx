@@ -42,7 +42,7 @@ export default function RootLayout({
         <Header />
 
         {children}
-        <div className="h-6 bg-[#141414] mb-[300px] lg:mb-[500px]"></div>
+        <div className="mb-[300px] lg:mb-[500px]"></div>
         <Footer />
       </body>
     </html>
