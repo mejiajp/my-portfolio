@@ -1,21 +1,28 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import "@/app/styles/navigation.css";
-import NavButtonHover from "@/app/components/NavButtonHover";
+import CircleButtonHover from "@/app/components/CircleButtonHover";
 
 interface SidebarButtonProps {
-  onClick: () => void; // onClick handler
-  isOpen: boolean | null; // Indicates whether the button is active
+  onClick: () => void;
+  isOpen: boolean;
 }
 
 const NavButton: React.FC<SidebarButtonProps> = ({ onClick, isOpen }) => {
-  // console.log(`is open is ${isOpen}`);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   return (
     <button
       onClick={onClick}
       className={`nav-button w-(--big-circle) rounded-full aspect-square z-50 flex flex-col relative justify-center items-center overflow-hidden cursor-pointer pointer-events-auto
-         group ${isOpen ? "open bg-primary" : "bg-primary-dark"}`}
+        group ${isOpen ? "open bg-primary" : "bg-primary-dark"}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      <NavButtonHover />
+      <CircleButtonHover isHovered={isHovered} mounted={mounted} />
       <div className="line top " />
       <div className="line bottom " />
     </button>

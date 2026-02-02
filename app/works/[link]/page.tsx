@@ -2,7 +2,7 @@
 
 // app/works/[id]/page.tsx
 import React from "react";
-import styles from "./link.module.css";
+// import styles from "./link.module.css";
 import { works } from "@/app/data/worksData"; // Import your works data
 import { Work } from "@/app/types/workTypes"; // Import your Work type
 import Image from "next/image";
@@ -33,9 +33,7 @@ export default function WorkDetailPage({
           {work.title}
         </h2>
       </div>
-      <div
-        className={`${styles.scaleAnimation} w-full h-[600px] relative bg-red-500`}
-      >
+      <div className={`w-full h-[600px] relative bg-red-500`}>
         <Image
           src={work.inImg.src}
           alt={work.title}
@@ -81,9 +79,7 @@ export default function WorkDetailPage({
       </div>
 
       <div className="py-5 pt-20 pb-10 lg:grid lg:grid-cols-2">
-        <div
-          className={`${styles.fadeAnimation} w-full  relative flex items-center`}
-        >
+        <div className={`w-full  relative flex items-center`}>
           <Image
             src={work.subImg.src}
             alt={work.title}
@@ -94,7 +90,7 @@ export default function WorkDetailPage({
           />
         </div>
 
-        <div className={`${styles.fadeAnimation} px-5 pt-10 lg:pt-0`}>
+        <div className={` px-5 pt-10 lg:pt-0`}>
           <p className="my-3 text-white font-semibold ">FEATURES</p>
           {work.features.map((feature, index) => (
             <div key={index} className="font-light text-xl py-5 px-5">

@@ -50,7 +50,7 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
         <GoUp mounted={isOpen}>
           <Link
             href="/"
-            className={`group overflow-hidden flex w-fit   lg:h-24  `}
+            className={`group overflow-hidden flex w-fit    `}
             onClick={onClose}
           >
             <p className="text-xl">01</p>
@@ -62,7 +62,7 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
         <GoUp mounted={isOpen}>
           <Link
             href="/works"
-            className={`group overflow-hidden flex w-fit  lg:h-24  `}
+            className={`group overflow-hidden flex w-fit   `}
             onClick={onClose}
           >
             <p className="text-xl">02</p>
@@ -74,7 +74,7 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
         <GoUp mounted={isOpen}>
           <Link
             href="/about"
-            className={` group overflow-hidden flex w-fit    lg:h-24  `}
+            className={` group overflow-hidden flex w-fit     `}
             onClick={onClose}
           >
             <p className="text-xl">03</p>

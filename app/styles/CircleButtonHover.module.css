@@ -1,0 +1,26 @@
+@keyframes toCenter {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes toUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.toCenter {
+  animation: toCenter 0.3s var(--easing-func) forwards;
+}
+
+.toUp {
+  animation: toUp 0.3s var(--easing-func) forwards;
+  animation-delay: 0.2s;
+}
