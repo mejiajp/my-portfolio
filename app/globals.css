@@ -7,7 +7,7 @@
   --color-tok: #25f4ee;
   --color-tak: #f1afdd;
 
-  --small-circle: clamp(2.5rem, 3vw, 3rem);
+  --small-circle: clamp(5rem, 5vw, 5rem);
 }
 
 /*

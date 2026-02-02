@@ -11,8 +11,8 @@ const NavButton: React.FC<SidebarButtonProps> = ({ onClick, isOpen }) => {
   return (
     <button
       onClick={onClick}
-      className={`nav-button hover:bg-[#ffffff0f] rounded-full w-[70px] aspect-square z-50 flex flex-col relative justify-center items-center cursor-pointer  ${
-        isOpen ? "open" : ""
+      className={`nav-button  rounded-full aspect-square z-50 flex flex-col relative justify-center items-center cursor-pointer  ${
+        isOpen ? "open bg-primary" : "bg-primary-dark"
       }`}
     >
       <div className="line top " />
