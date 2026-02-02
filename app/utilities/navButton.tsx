@@ -1,5 +1,6 @@
 import React from "react";
 import "@/app/styles/navigation.css";
+import NavButtonHover from "@/app/components/NavButtonHover";
 
 interface SidebarButtonProps {
   onClick: () => void; // onClick handler
@@ -11,10 +12,10 @@ const NavButton: React.FC<SidebarButtonProps> = ({ onClick, isOpen }) => {
   return (
     <button
       onClick={onClick}
-      className={`nav-button  rounded-full aspect-square z-50 flex flex-col relative justify-center items-center cursor-pointer  ${
-        isOpen ? "open bg-primary" : "bg-primary-dark"
-      }`}
+      className={`nav-button w-(--big-circle) rounded-full aspect-square z-50 flex flex-col relative justify-center items-center overflow-hidden cursor-pointer pointer-events-auto
+         group ${isOpen ? "open bg-primary" : "bg-primary-dark"}`}
     >
+      <NavButtonHover />
       <div className="line top " />
       <div className="line bottom " />
     </button>

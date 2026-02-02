@@ -33,7 +33,7 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
     //     isOpen === true ? " open" : ""
     //   }`}
     <div
-      className={`fixed inset-0 nav-content bg-primary_dark min-h-dvh  overscroll-none overflow-hidden text-white flex flex-col  justify-between z-30 px-10  ${
+      className={`fixed inset-0 nav-content bg-primary-dark min-h-dvh  overscroll-none overflow-hidden text-white flex flex-col  justify-between z-30 px-10 pointer-events-auto  ${
         isOpen === true ? " open" : ""
       }`}
     >

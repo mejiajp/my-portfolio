@@ -7,7 +7,7 @@ import Resume from "@/public/svg/license-stroke-rounded";
 
 const Footer = () => {
   return (
-    <div className="h-[300px] lg:h-[500px] w-full fixed bottom-0 z-[-1] bg-primary_dark text-white flex items-center justify-center ">
+    <div className="h-[300px] lg:h-[500px] w-full fixed bottom-0 z-[-1] bg-primary-dark text-white flex items-center justify-center ">
       <h4 className="text-5xl md:text-9xl opacity-60 w-full  text-center">
         Get Connected
       </h4>

@@ -13,16 +13,8 @@ const Sidebar = () => {
   };
 
   const handleClose = () => {
-    setIsOpen(false); // Function to close the sidebar
+    setIsOpen(false);
   };
-
-  // useEffect(() => {
-  //   const handleEsc = (e) => {
-  //     if (e.key === "Escape") setIsOpen(false);
-  //   };
-  //   document.addEventListener("keydown", handleEsc);
-  //   return () => document.removeEventListener("keydown", handleEsc);
-  // }, []); // Closes on esc
 
   return (
     <aside className="">

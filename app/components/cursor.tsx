@@ -57,7 +57,7 @@ export default function Cursor() {
 
       cursor.style.transform = `translate(${pos.current.x}px, ${
         pos.current.y
-      }px) translate(-50%, -50%) ${visible ? "scale(1.25)" : "scale(1)"}`;
+      }px) translate(-50%, -50%) ${visible ? "scale(1)" : "scale(.5)"}`;
 
       animationFrame = requestAnimationFrame(animate);
     };
@@ -79,12 +79,11 @@ export default function Cursor() {
       ref={cursorRef}
       className={`
         pointer-events-none fixed left-0 top-0 z-9999
-         aspect-square rounded-full bg-tak
+        w-(--big-circle) aspect-square rounded-full bg-tak
         opacity-0 transition-all duration-300 ease-out
-        flex items-center justify-center text-xs 
+        flex items-center justify-center 
         ${visible ? "opacity-100" : "opacity-0"}
       `}
-      style={{ width: "var(--small-circle)" }}
     >
       <h6>{type !== "Default" ? type : null}</h6>
     </div>,
