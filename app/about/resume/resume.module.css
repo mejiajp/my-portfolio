@@ -28,12 +28,12 @@
   line-height: 1;
 }
 
-.fadeAni {
+/* .fadeAni {
   animation: fade var(--easing-func);
   animation-timeline: view();
   animation-range-start: cover;
   animation-range-end: 400px;
-}
+} */
 
 @keyframes fade {
   from {
@@ -43,13 +43,13 @@
     opacity: 1;
   }
 }
-
+/* 
 .scaleAni {
   animation: scales var(--easing-func);
   animation-timeline: view();
   animation-range-start: cover;
   animation-range-end: 500px;
-}
+} */
 
 @keyframes scales {
   from {

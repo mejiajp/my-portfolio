@@ -6,7 +6,7 @@ import CircleButtonHover from "@/app/components/CircleButtonHover";
 
 interface SidebarButtonProps {
   onClick: () => void;
-  isOpen: boolean;
+  isOpen: boolean | null;
 }
 
 const NavButton: React.FC<SidebarButtonProps> = ({ onClick, isOpen }) => {
