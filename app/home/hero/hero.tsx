@@ -44,7 +44,8 @@ const Hero = () => {
         </p>
         <Link
           href="/about"
-          className={` ${styles.getToKnow} mt-10 lg:mt-0 relative group `}
+          className={` ${styles.getToKnow} mt-10 lg:mt-0 relative group  `}
+          data-cursor="About"
         >
           <p className="cursor-pointer">Get to know me more</p>
           <Arrow className="ml-5 text-tak transition-transform duration-800 group-hover:translate-x-5 scale-x-[2.5]" />

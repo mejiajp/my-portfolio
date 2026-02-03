@@ -5,7 +5,7 @@ import { works } from "@/app/data/worksData"; // Import the works data
 
 const Works = () => {
   return (
-    <section className="mt-[300px] bg-primary">
+    <section className="mt-[300px] ">
       <div className={`${styles.floatAnimation} mt-10 `}>
         <h6 className="text-center text-2xl lg:text-5xl">SIGNIFICANT WORKS</h6>
       </div>

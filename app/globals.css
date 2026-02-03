@@ -74,12 +74,6 @@ h6 {
   text-shadow: 2px 2px 2px #515151;
 }
 
-.site-content {
-  position: relative;
-  overflow: hidden;
-  --curve-strength: calc(12% * (1 - var(--curve-progress)));
-  clip-path: ellipse(100% var(--curve-strength) at 50% 100%);
-  transition: clip-path 0.1s ease-out;
-  background-color: #1a1a1a; /* make sure background is visible */
-  border: 2px solid var(--secondary-color);
+.curve {
+  clip-path: path("M 10 10 C 20 20, 40 20, 50 10");
 }

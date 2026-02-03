@@ -39,10 +39,13 @@ export default function RootLayout({
         <div id="cursor-root" />
         <Cursor />
         <SplashScreen />
+
         <Header />
 
-        {children}
-        <div className="mb-[300px] lg:mb-[500px]"></div>
+        <main className="">{children}</main>
+
+        <div className="mb-[400px] lg:mb-[600px]"></div>
+
         <Footer />
       </body>
     </html>
