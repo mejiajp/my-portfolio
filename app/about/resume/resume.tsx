@@ -35,6 +35,7 @@ const Resume = () => {
       "React",
       "NextJS",
       "TypeScript",
+      "NestJS",
       "CSS",
       "HTML",
       "PostgreSQL",
