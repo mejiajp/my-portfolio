@@ -73,7 +73,3 @@ h6 {
 .shadow-text {
   text-shadow: 2px 2px 2px #515151;
 }
-
-.curve {
-  clip-path: path("M 10 10 C 20 20, 40 20, 50 10");
-}
