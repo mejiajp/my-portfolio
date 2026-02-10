@@ -29,7 +29,7 @@ export default function WorkDetailPage({
     <main className="text-[#dddddd] bg-primary text-sm pb-[150px] px-8 tracking-widest leading-relaxed overflow-hidden">
       <div className="w-full h-[600px] flex justify-center items-center ">
         {" "}
-        <h2 className="text-6xl lg:text-9xl font-bold w-[80%] text-center">
+        <h2 className="text-4xl lg:text-9xl font-bold w-[80%] text-center">
           {work.title}
         </h2>
       </div>
