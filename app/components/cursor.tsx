@@ -11,12 +11,19 @@ export default function Cursor() {
   const [visible, setVisible] = useState(false);
   const [type, setType] = useState<CursorType>("Default");
 
+  // Detect if the user is on desktop
+  const isDesktop =
+    typeof window !== "undefined" && !("ontouchstart" in window);
+
   // Target
   const mouse = useRef({ x: 0, y: 0 });
   // Current
   const pos = useRef({ x: 0, y: 0 });
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    if (!isDesktop) return; // Skip if not desktop
+    setMounted(true);
+  }, [isDesktop]);
 
   useEffect(() => {
     if (!mounted) return;
@@ -72,7 +79,7 @@ export default function Cursor() {
     };
   }, [mounted, visible]);
 
-  if (!mounted) return null;
+  if (!mounted || !isDesktop) return null;
 
   return createPortal(
     <div
