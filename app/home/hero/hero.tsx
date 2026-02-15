@@ -15,16 +15,13 @@ const Hero = () => {
         className={`${styles.imageContainer} relative w-full h-full  overflow-hidden flex items-center`}
       >
         <Image
-          className="object-cover"
           src={Profile}
           alt="Profile"
-          quality={75}
           priority
+          fill
+          sizes="100vw"
+          className="object-cover"
         />
-
-        {/* <div
-          className={`${styles.slide_up} absolute w-full h-full bg-tak`}
-        ></div> */}
       </div>
       {/* Introduction */}
       <div
