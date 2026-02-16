@@ -12,16 +12,9 @@ const Hero = () => {
       className={`${styles.container} mt-[100px] lg:mt-[150px] p-10 items-center lg:grid grid-cols-2 lg:mx-20 lg:gap-[5%] lg:p-0 `}
     >
       <div
-        className={`${styles.imageContainer} relative w-full h-full  overflow-hidden flex items-center`}
+        className={`${styles.imageContainer} relative w-full h-full overflow-hidden flex items-center bg-blue`}
       >
-        <Image
-          src={Profile}
-          alt="Profile"
-          priority
-          fill
-          sizes="100vw"
-          className="object-cover"
-        />
+        <Image src={Profile} alt="Profile" priority className="object-cover" />
       </div>
       {/* Introduction */}
       <div
@@ -29,7 +22,6 @@ const Hero = () => {
       >
         <div className="text-3xl lg:text-4xl font-medium tracking-wider leading-loose mt-8  lg:mt-0 h-[200px] md:h-[120px] lg:h-[20%]">
           <p>
-            {" "}
             Juan is an up and coming <AutoType />
           </p>
         </div>
