@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import "@/app/styles/navigation.css";
-import CircleButtonHover from "@/app/components/CircleButtonHover";
+import CircleButtonHover from "@/app/components/circleHover";
 
 interface SidebarButtonProps {
   onClick: () => void;
