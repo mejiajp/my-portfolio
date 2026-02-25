@@ -16,7 +16,7 @@ const Footer = () => {
       <div className="absolute bottom-5 flex justify-between items-center w-full  px-10 ">
         <div className=" text-[hsl(0,0%,90%)] text-center md:flex  md:gap-3 ">
           <h6>Updated: </h6>
-          <h6>January 2026</h6>
+          <h6>February 2026</h6>
         </div>
         <div className="flex space-x-[clamp(.25rem,1vw,.75rem)] ">
           <div
