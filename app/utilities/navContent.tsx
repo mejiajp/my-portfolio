@@ -126,7 +126,7 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
                   <Github
                     className="text-white cursor-pointer group-hover:text-tak"
                     onClick={() =>
-                      handleSocialClick("https://github.com/mejia-1MT")
+                      handleSocialClick("https://github.com/mejiajp")
                     }
                   />
                 </div>
