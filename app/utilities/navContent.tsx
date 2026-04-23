@@ -13,7 +13,7 @@ interface NavContentProps {
 
 const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
   const handleMailClick = () => {
-    const email = "mejiapaulo13gmail.com"; // Replace with your email
+    const email = "mejiapaulo13@gmail.com"; // Replace with your email
     const subject = "Hello Juan!"; // Replace with your subject
     const body = "I would like to get in touch."; // Replace with your email body
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(
