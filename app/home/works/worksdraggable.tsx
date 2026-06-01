@@ -26,7 +26,7 @@ const WorksDraggable = ({ works }: Props) => {
   const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     if (!scrollRef.current) return;
 
-    e.preventDefault(); // 🔥 CRITICAL
+    e.preventDefault();
 
     drag.current = {
       active: true,
@@ -65,12 +65,12 @@ const WorksDraggable = ({ works }: Props) => {
     }
   };
 
-  const cursorClass = isDragging ? styles.grabbing : styles.grab;
+  const cursorClass = isDragging ? styles.grabbing : styles.pointer;
 
   return (
     <div
       ref={scrollRef}
-      className={`${styles.container} ${cursorClass} px-5 lg:px-20 pb-[250px] lg:pb-[300px]`}
+      className={`${styles.container} ${cursorClass} px-5 lg:px-20`}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={endDrag}
