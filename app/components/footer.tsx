@@ -4,8 +4,31 @@ import Link from "next/link";
 import Linkedin from "@/public/svg/linkedin-02-stroke-rounded";
 import Github from "@/public/svg/github-stroke-rounded";
 import Resume from "@/public/svg/license-stroke-rounded";
+import { useEffect, useState } from "react";
 
 const Footer = () => {
+  const [lastUpdated, setLastUpdated] = useState("");
+
+  useEffect(() => {
+    async function fetchDate() {
+      const response = await fetch(
+        "https://api.github.com/repos/mejiajp/my-portfolio/commits?per_page=1"
+      );
+
+      const commits = await response.json();
+
+      const date = new Date(commits[0].commit.author.date);
+
+      setLastUpdated(
+        date.toLocaleDateString("en-US", {
+          month: "long",
+          year: "numeric",
+        })
+      );
+    }
+
+    fetchDate();
+  }, []);
   return (
     <div className="h-[400px] lg:h-[600px] w-full fixed bottom-0 z-[-1] bg-primary-dark text-white flex items-center justify-center ">
       <h4 className="text-5xl md:text-9xl opacity-60 w-full  text-center">
@@ -16,7 +39,7 @@ const Footer = () => {
       <div className="absolute bottom-5 flex justify-between items-center w-full  px-10 ">
         <div className=" text-[hsl(0,0%,90%)] text-center md:flex  md:gap-3 ">
           <h6>Updated: </h6>
-          <h6>March 2026</h6>
+          <h6>{lastUpdated}</h6>
         </div>
         <div className="flex space-x-[clamp(.25rem,1vw,.75rem)] ">
           <div
