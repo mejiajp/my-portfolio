@@ -67,6 +67,8 @@ const Slideshow = () => {
                 layout="responsive"
                 width={100}
                 height={100}
+                loading="lazy"
+                placeholder="blur"
                 className="object-cover"
               />
             </div>
@@ -91,6 +93,8 @@ const Slideshow = () => {
                 layout="responsive"
                 width={100}
                 height={100}
+                loading="lazy"
+                placeholder="blur"
                 className="object-cover"
               />
             </div>
