@@ -33,10 +33,12 @@ const Resume = () => {
     skills: [
       "JavaScript",
       "React",
+      "Java",
       "Next.js",
       "TypeScript",
       "Node.js",
       "Express.js",
+      "Spring Boot",
       "NestJS",
       "CSS",
       "HTML",
