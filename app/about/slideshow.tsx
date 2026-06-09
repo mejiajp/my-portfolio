@@ -191,12 +191,9 @@ const Slideshow = () => {
               <Image
                 src={img.src}
                 alt={`Scattered Image ${index + 1}`}
-                layout="responsive"
-                width={100}
-                height={100}
                 loading="lazy"
                 placeholder="blur"
-                className="object-cover"
+                className="object-cover w-full h-auto"
               />
             </div>
           ))}
@@ -219,12 +216,9 @@ const Slideshow = () => {
               <Image
                 src={img.src}
                 alt={`Scattered Image ${index + 1}`}
-                layout="responsive"
-                width={100}
-                height={100}
                 loading="lazy"
                 placeholder="blur"
-                className="object-cover"
+                className="object-cover w-full h-auto"
               />
             </div>
           ))}
