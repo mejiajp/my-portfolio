@@ -2,38 +2,42 @@ import React from "react";
 import styles from "./workItem.module.css";
 import { Work } from "@/app/types/workTypes";
 import Image from "next/image";
-import Arrow from "@/public/svg/arrow-right-02-stroke-rounded";
+import Link from "next/link";
 
 interface WorkItemProps {
   work: Work;
+  styles: typeof styles;
   index: number;
 }
-const WorkItem: React.FC<WorkItemProps> = ({ work, index }) => {
+const WorkItem: React.FC<WorkItemProps> = ({ work, styles, index }) => {
   return (
-    <section className={`w-screen bg-blue-500 ${index % 2 === 0 ? "" : ""}`}>
-      <div
-        className={` max-w-[450px] min-w-[280px] pb-10 relative`}
-      
-      >
+    <Link
+      className={`${styles.project}   `}
+      style={{ "--index": index } as React.CSSProperties}
+      href={`works/${work.link}`}
+      data-cursor="View"
+    >
+      <div className="w-full overflow-hidden">
         <Image
-          src={work.inImg.src}
+          src={work.img.src}
           alt={work.title}
-          width={100}
-          height={100}
+          width={300}
+          height={300}
           quality={100}
-          className=""
+          className={`${styles.image}`}
         />
-        <div>
-          <h1 className={`text-6xl `}>{work.title}</h1>
-        </div>
-        <div className={`${styles.end}`}>
-          <div className={`${styles.endContent}`}> {work.end}</div>
-        </div>
-        <div className={`${styles.button} bg-pink-500 z-20`}>
-          <Arrow className={`${styles.arrow}`} />
+      </div>
+
+      <div className={styles.overlay}>
+        <div className={styles.endDate}>
+          <p className={styles.endDateContent}>{work.end}</p>
         </div>
       </div>
-    </section>
+      <div className="p-5 text-xl  md:p-10 tracking-none ">
+        <h4 className={`${styles.projectType} `}>{work.projectType}</h4>
+        <h3 className={styles.projectTitle}>{work.title}</h3>
+      </div>
+    </Link>
   );
 };
 
