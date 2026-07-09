@@ -44,6 +44,7 @@ const Footer = () => {
         <div className="flex space-x-[clamp(.25rem,1vw,.75rem)] ">
           <div
             className="w-(--small-circle)  aspect-square rounded-full border outline-[#696969] flex items-center justify-center hover:text-tak hover:border-tak group"
+            title="LinkedIn"
             onClick={() =>
               window.open(
                 "https://www.linkedin.com/in/juan-paulo-mejia-857953282/",
@@ -57,12 +58,14 @@ const Footer = () => {
             href="./Resumé.pdf" // Directly referencing the public path
             target="_blank"
             rel="noopener noreferrer"
+            title="Resume"
             className="w-(--small-circle)  aspect-square rounded-full border outline-[#696969] flex items-center justify-center hover:text-tak hover:border-tak group"
           >
             <Resume className="text-[hsl(0,0%,90%)] cursor-pointer group-hover:text-tak w-[60%]" />
           </Link>
           <div
             className="w-(--small-circle)  aspect-square rounded-full border outline-[#696969] flex items-center justify-center hover:text-tak hover:border-tak group"
+            title="Github"
             onClick={() => window.open("https://github.com/mejiajp", "_blank")}
           >
             <Github className="text-[hsl(0,0%,90%)] cursor-pointer group-hover:text-tak w-[60%]" />

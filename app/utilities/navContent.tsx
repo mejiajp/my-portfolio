@@ -104,7 +104,10 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
             <div className="">
               <p> More about me in socials </p>
               <div className="flex space-x-4 m-px">
-                <div className="w-(--small-circle) aspect-square fill-white border  text-white flex justify-center items-center rounded-full hover:bg-[#ffffff0f] hover:border-tak group">
+                <div
+                  className="w-(--small-circle) aspect-square fill-white border  text-white flex justify-center items-center rounded-full hover:bg-[#ffffff0f] hover:border-tak group"
+                  title="LinkedIn"
+                >
                   <Linkedin
                     className="text-white cursor-pointer group-hover:text-tak"
                     onClick={() =>
@@ -114,7 +117,10 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
                     }
                   />
                 </div>
-                <div className="w-(--small-circle) aspect-square  fill-white border  text-white flex justify-center items-center rounded-full hover:bg-[#ffffff0f] hover:border-tak group">
+                <div
+                  className="w-(--small-circle) aspect-square  fill-white border  text-white flex justify-center items-center rounded-full hover:bg-[#ffffff0f] hover:border-tak group"
+                  title="Facebook"
+                >
                   <Facebook
                     className="text-white cursor-pointer group-hover:text-tak"
                     onClick={() =>
@@ -122,7 +128,10 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
                     }
                   />
                 </div>
-                <div className=" w-(--small-circle) aspect-square  fill-white border  text-white flex justify-center items-center rounded-full hover:bg-[#ffffff0f] hover:border-tak group">
+                <div
+                  className=" w-(--small-circle) aspect-square  fill-white border  text-white flex justify-center items-center rounded-full hover:bg-[#ffffff0f] hover:border-tak group"
+                  title="GitHub"
+                >
                   <Github
                     className="text-white cursor-pointer group-hover:text-tak"
                     onClick={() =>
