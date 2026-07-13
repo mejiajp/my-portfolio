@@ -33,7 +33,7 @@ export default function WorkDetailPage({
           {work.title}
         </h2>
       </div>
-      <div className={`w-full h-[600px] relative bg-red-500`}>
+      <div className={`w-full h-[600px] relative bg-tak`}>
         <Image
           src={work.inImg.src}
           alt={work.title}
