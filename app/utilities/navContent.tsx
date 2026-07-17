@@ -92,6 +92,7 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
             <div className="overflow-hidden">
               <p>Get in touch</p>
               <u
+                data-cursor="Gmail"
                 className="cursor-pointer text-white mt-2 hover:text-tak"
                 onClick={handleMailClick}
               >
