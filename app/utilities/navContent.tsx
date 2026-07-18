@@ -39,7 +39,12 @@ const NavContent: React.FC<NavContentProps> = ({ isOpen, onClose }) => {
     >
       {/* Title  */}
       <div className=" w-full z-20  flex justify-between items-center py-5  ">
-        <Link href="/" className="title hover:text-white " onClick={onClose}>
+        <Link
+          href="/"
+          className="title hover:text-white "
+          onClick={onClose}
+          data-cursor="Home"
+        >
           SOMEJUANS PORTFOLIO
         </Link>
         <div className="w-[70px] aspect-square"></div>
