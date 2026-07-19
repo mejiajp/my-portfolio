@@ -42,7 +42,9 @@ export default function RootLayout({
 
         <Header />
 
-        <main className="">{children}</main>
+        <main className="shadow-[0_25px_60px_var(--color-primary-dark)]">
+          {children}
+        </main>
 
         <div className="mb-[400px] lg:mb-[600px]"></div>
 
