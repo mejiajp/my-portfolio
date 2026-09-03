@@ -1,8 +1,8 @@
 import { Work } from "@/app/types/workTypes";
 // Import images
-import wr2main from "@/public/img/works/geoIcon.png";
-import wr2sub from "@/public/img/works/geo1.png";
-import wr2in from "@/public/img/works/geoIn.png";
+import wr2main from "@/public/img/works/tiponIcon.png";
+import wr2sub from "@/public/img/works/tipon1.png";
+import wr2in from "@/public/img/works/tiponIn.png";
 import wr1main from "@/public/img/works/geoIcon.png";
 import wr1sub from "@/public/img/works/geo1.png";
 import wr1in from "@/public/img/works/geoIn.png";
