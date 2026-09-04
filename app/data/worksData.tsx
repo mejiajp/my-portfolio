@@ -36,51 +36,47 @@ export const works: Work[] = [
     subImg: wr2sub,
     inImg: wr2in,
     title: "Tipon",
-    overview: `A personal expense tracking application built to practice full-stack development, authentication, database management, and modern web application design using Next.js and Spring Boot.`,
+    overview: `A full-stack personal expense tracking application 
+    built with Java Spring Boot and Next.js, featuring authentication, 
+    database management, and modern web application design.`,
 
-    description: `Tipon is a personal expense tracker designed to make it easier to record, organize, and understand everyday spending. The application allows users to create expenses, organize them into categories, and view their spending through different summaries and visual breakdowns.
-  
-  The project was built as a way to explore full-stack development using a modern frontend and backend architecture. The frontend uses Next.js, React, TypeScript, and Tailwind CSS, while the backend is powered by Java Spring Boot with Spring Security, JWT authentication, JPA/Hibernate, and PostgreSQL.
-  
-  Tipon also includes guest accounts and Google authentication, with account linking that allows a guest account to be connected to a Google account. Authentication is handled through secure cookies and device identification, giving the project hands-on experience with authentication flows, protected API endpoints, CORS, and session management.
-  
-  Beyond basic expense tracking, the application includes features such as spending splits, recent transactions, date-based filtering, and calendar-based expense visualization. The project focuses on building a clean, responsive interface while gaining practical experience connecting a Next.js frontend to a Spring Boot REST API and a PostgreSQL database.`,
+    description: `Tipon is a personal expense tracker designed to 
+    make it easier to record, organize, and understand everyday 
+    spending. Users can create expenses, organize them into categories, 
+    and view their spending through summaries and visual breakdowns. 
+    The project was built to explore full-stack development using a 
+    modern frontend and backend architecture, with Next.js, React, 
+    TypeScript, and Tailwind CSS on the frontend, and Java Spring Boot, 
+    Spring Security, JWT, JPA/Hibernate, and PostgreSQL on the backend. 
 
+    
+    Tipon supports guest accounts and Google authentication, including 
+    account linking that allows guest accounts to be connected to Google 
+    accounts. Authentication uses secure cookies and device identification, 
+    providing hands-on experience with authentication flows, protected 
+    API endpoints, CORS, and session management. Additional features 
+    include spending splits, recent transactions, date-based filtering, 
+    and calendar-based expense visualization, with a focus on creating a 
+    clean, responsive interface while connecting a Next.js frontend to a 
+    Spring Boot REST API and PostgreSQL database.`,
     features: [
       {
         title: "Expense Tracking",
-        description: `Allows users to record and manage their expenses while organizing them into different spending categories.`,
+        description: `Allows users to record, manage, and organize expenses into different spending categories.`,
       },
       {
         title: "Spending Overview",
-        description: `Provides summaries of spending across different time ranges, making it easier to understand current and previous spending patterns.`,
-      },
-      {
-        title: "Category-Based Spending",
-        description: `Groups expenses into categories and provides a visual spending split to help users see where their money is going.`,
+        description: `Provides spending summaries across different time ranges to help users understand spending patterns.`,
       },
       {
         title: "Calendar Expense View",
-        description: `Displays expenses across a calendar to provide a date-based overview of spending activity.`,
+        description: `Displays expenses on a calendar to provide a date-based overview of spending activity.`,
       },
       {
         title: "Guest & Google Authentication",
-        description: `Supports guest accounts as well as Google authentication, including the ability for guest users to link their account to a Google account.`,
-      },
-      {
-        title: "Full-Stack REST API",
-        description: `Uses a Spring Boot REST API to handle authentication, users, devices, categories, and expenses while communicating with the Next.js frontend.`,
-      },
-      {
-        title: "Secure Authentication",
-        description: `Uses JWT-based authentication, HTTP cookies, device identification, Spring Security, and protected API endpoints to manage authenticated sessions.`,
-      },
-      {
-        title: "Responsive Modern UI",
-        description: `Built with Next.js, Tailwind CSS, and shadcn/ui to create a clean and responsive interface for managing and visualizing expenses.`,
+        description: `Supports guest and Google authentication, including the ability to link guest accounts to Google accounts.`,
       },
     ],
-
     link: "tipon",
     projectType: "PERSONAL",
     role: "SOLO",
@@ -96,7 +92,6 @@ export const works: Work[] = [
     end: "Aug 2026",
     live: "https://tipon-v1.vercel.app",
   },
-
   {
     id: 1,
     img: wr1main,
