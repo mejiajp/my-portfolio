@@ -64,10 +64,8 @@ export default function WorkDetailPage({
           <p className="truncate">{work.techStack.join(", ")}</p>
         </div>
         <div>
-          <h3 className="text-white font-semibold">TIMELINE</h3>
-          <p className="">
-            {work.start} - {work.end}
-          </p>
+          <h3 className="text-white font-semibold">DATE</h3>
+          <p className="">{work.end}</p>
         </div>
       </div>
 
