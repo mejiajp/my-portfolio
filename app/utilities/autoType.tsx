@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import styles from "@/app/home/hero/hero.module.css";
+import styles from "@/app/(pages)/home/hero/hero.module.css";
 
 const AutoType = () => {
   const texts = [

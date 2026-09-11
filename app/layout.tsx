@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import SplashScreen from "@/app/components/loading";
-import Footer from "@/app/components/footer";
-import Header from "@/app/components/header";
-import Cursor from "@/app/components/cursor";
-
 export const metadata: Metadata = {
   title: "Juan Mejia",
   description: "Portfolio created by Juan Paulo Mejia",
@@ -35,21 +30,7 @@ export default function RootLayout({
           rel="stylesheet"
         ></link>
       </head>
-      <body className={`antialiased`}>
-        <div id="cursor-root" />
-        <Cursor />
-        <SplashScreen />
-
-        <Header />
-
-        <main className="shadow-[0_25px_60px_var(--color-primary-dark)]">
-          {children}
-        </main>
-
-        <div className="mb-[400px] lg:mb-[600px]"></div>
-
-        <Footer />
-      </body>
+      <body className={`antialiased`}>{children}</body>
     </html>
   );
 }

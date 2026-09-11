@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@/app/home/hero/hero.module.css";
+import styles from "@/app/(pages)/home/hero/hero.module.css";
 import Image from "next/image";
 import Profile from "@/public/img/profile.jpg";
 import AutoType from "@/app/utilities/autoType";
