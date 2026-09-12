@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="pt-[100px] lg:pt-[150px]">
+    <div className="pt-[100px] lg:pt-[150px] ">
       <section
         className={`${styles.container} p-10  lg:grid grid-cols-2 lg:mx-20 lg:gap-[5%] lg:p-0`}
       >
